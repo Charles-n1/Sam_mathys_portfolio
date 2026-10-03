@@ -3,7 +3,9 @@
 
 <header>
 	<nav>
-		<img src="/Logo/Logos blanc/logo-developpemennt_couche.png" alt="Logo développé couché" />
+		<a href="#">
+			<img class="logo" src="/Logo/Logos blanc/logo-developpe-couche-fixe.png" alt="Logo développé couché" />
+		</a>
 
 		<div class="links">
 			<a href="#services">Services</a>
@@ -14,6 +16,18 @@
 
 	<div class="orange-bar"></div>
 </header>
+
+<script>
+	const logo = document.querySelector('.logo');
+
+	logo.addEventListener('click', () => {
+		logo.src = '/Logo/Logos blanc/logo-developpe-couche.webp?' + Date.now();
+
+		setTimeout(() => {
+			logo.src = '/Logo/Logos blanc/logo-developpe-couche-fixe.png';
+		}, 2400);
+	});
+</script>
 
 <style>
 	header {

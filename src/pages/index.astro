@@ -24,7 +24,7 @@ import Header from '../components/Header.astro';
 
         <img class="dumbbell" src="/Logo/dumbbell_mathys_sam_transparent.webp" alt="Haltère Mathys Sam" />
 
-        <div class="todo">
+        <div class="todo" id="services">
             <h2>Todo workout:</h2>
 
             <div class="row">
@@ -61,7 +61,7 @@ import Header from '../components/Header.astro';
             </div>
         </div>
 
-        <div class="about">
+        <div class="about" id="a-propos">
             <h2>À propos de moi:</h2>
 
             <div class="about-row">
@@ -92,7 +92,7 @@ import Header from '../components/Header.astro';
             <img src="/Background.png" alt="Portfolio de Sam Mathys" />
         </picture>
 
-        <footer>
+        <footer id="contact">
             <p class="contact-title">N’hésitez pas à me contacter 😁 !</p>
             <div class="contact">
                 <p>
@@ -138,6 +138,11 @@ import Header from '../components/Header.astro';
         top: -100px;
         right: -29%;
         width: 100%;
+    }
+
+    #services,
+    #a-propos {
+        scroll-margin-top: 100px;
     }
 
     .todo {
