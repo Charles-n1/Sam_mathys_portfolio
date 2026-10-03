@@ -196,6 +196,7 @@ import Header from '../components/Header.astro';
         font-size: 48px;
         text-decoration: underline;
         color: black;
+        width: fit-content;
     }
 
     .row {
@@ -311,30 +312,30 @@ import Header from '../components/Header.astro';
 
     p,
     h2 {
-        animation: sway 3s ease-in-out infinite alternate;
+        animation: sway 1.8s ease-in-out infinite alternate;
     }
 
     .check,
     .icon,
     .about-icon {
-        animation: sway-icon 2.5s ease-in-out infinite alternate;
+        animation: sway-icon 1.5s ease-in-out infinite alternate;
     }
 
     @keyframes sway {
         from {
-            transform: rotate(-1deg);
+            transform: rotate(-0.5deg);
         }
         to {
-            transform: rotate(1deg);
+            transform: rotate(0.5deg);
         }
     }
 
     @keyframes sway-icon {
         from {
-            transform: rotate(-4deg);
+            transform: rotate(-2deg);
         }
         to {
-            transform: rotate(4deg);
+            transform: rotate(2deg);
         }
     }
 
