@@ -61,6 +61,32 @@ import Header from '../components/Header.astro';
             </div>
         </div>
 
+        <div class="about">
+            <h2>À propos de moi:</h2>
+
+            <div class="about-row">
+                <div class="item left">
+                    <p class="about-text">200 kg<br />Bench press</p>
+                    <img class="about-icon trophee" src="/Logo/Logos noir/trophee.png" alt="Trophée" />
+                </div>
+                <div class="item">
+                    <img class="about-icon manette" src="/Logo/Logos noir/manette.png" alt="Manette" />
+                    <p class="about-text jeux">Les jeux</p>
+                </div>
+            </div>
+
+            <div class="about-row">
+                <div class="item left">
+                    <p class="about-text">Les animés</p>
+                    <img class="about-icon" src="/Logo/Logos noir/anime-4.png" alt="Animé" />
+                </div>
+                <div class="item">
+                    <img class="about-icon" src="/Logo/Logos noir/toque-cuisinier.png" alt="Toque de cuisinier" />
+                    <p class="about-text">La cuisine !</p>
+                </div>
+            </div>
+        </div>
+
         <picture>
             <source media="(max-width: 768px)" srcset="/Mobile%20Background.jpg" />
             <img src="/Background.png" alt="Portfolio de Sam Mathys" />
@@ -145,6 +171,56 @@ import Header from '../components/Header.astro';
 
     .pair .icon {
         margin: 0 -5vw;
+    }
+
+    .about {
+        position: absolute;
+        top: 139vw;
+        left: 6%;
+        width: 84%;
+    }
+
+    .about-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: -2vw;
+    }
+
+    .about h2 {
+        margin-left: 3vw;
+    }
+
+    .item {
+        display: flex;
+        align-items: center;
+        gap: 0;
+    }
+
+    .left {
+        margin-left: 5.8vw;
+        gap: 1.2vw;
+    }
+
+    .manette {
+        margin-right: 1 vw;
+    }
+
+    .jeux {
+        margin-right: 3vw;
+    }
+
+    .trophee {
+        margin-left: -1vw;
+    }
+
+    .about-text {
+        font-family: 'Antonio', sans-serif;
+        font-size: 48px;
+        color: black;
+    }
+
+    .about-icon {
+        width: 16vw;
     }
 
     .green {
