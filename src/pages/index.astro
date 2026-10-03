@@ -22,7 +22,7 @@ import Header from '../components/Header.astro';
             </p>
         </div>
 
-        <img class="dumbbell" src="/Logo/dumbbell_mathys_sam_transparent.webp" alt="Haltère Mathys Sam" />
+        <img class="dumbbell" alt="" />
 
         <div class="todo" id="services">
             <h2>Todo workout:</h2>
@@ -108,7 +108,10 @@ import Header from '../components/Header.astro';
 
         <script>
             const dumbbell = document.querySelector('.dumbbell');
-            dumbbell.src = dumbbell.src + '?' + Date.now();
+
+            setTimeout(() => {
+                dumbbell.src = '/Logo/dumbbell_mathys_sam_transparent.webp?' + Date.now();
+            }, 2500);
 
             function splitLetters(element) {
                 for (const node of [...element.childNodes]) {
@@ -132,6 +135,10 @@ import Header from '../components/Header.astro';
 </html>
 
 <style>
+    html {
+        scroll-behavior: smooth;
+    }
+
     body {
         margin: 0;
         overflow-x: hidden;
@@ -150,6 +157,18 @@ import Header from '../components/Header.astro';
         font-family: 'Antonio', sans-serif;
         font-size: 48px;
         color: white;
+        animation: reveal 1.5s ease-out 0.8s both;
+    }
+
+    @keyframes reveal {
+        from {
+            clip-path: inset(0 100% 0 0);
+            opacity: 0;
+        }
+        to {
+            clip-path: inset(0 0 0 0);
+            opacity: 1;
+        }
     }
 
     .dumbbell {
