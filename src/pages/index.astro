@@ -1,27 +1,153 @@
 ---
+import Header from '../components/Header.astro';
 ---
 
 <html lang="fr">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>Sam Mathys</title>
-	</head>
-	<body>
-		<picture>
-			<source media="(max-width: 768px)" srcset="/Mobile%20Background.jpg" />
-			<img src="/Background.png" alt="Portfolio de Sam Mathys" />
-		</picture>
-	</body>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Sam Mathys</title>
+        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Antonio&display=swap" rel="stylesheet" />
+    </head>
+    <body>
+        <Header />
+
+        <div class="intro">
+            <p>Salut ! Moi, C’est Mathys !</p>
+            <p>
+                Je suis passionné de musculation.<br />
+                Ensemble, transformons<br />
+                nos idées en<br />
+                <span class="green">Réussites !</span>
+            </p>
+        </div>
+
+        <img class="dumbbell" src="/Logo/dumbbell_mathys_sam_transparent.webp" alt="Haltère Mathys Sam" />
+
+        <div class="todo">
+            <h2>Todo workout:</h2>
+
+            <div class="row">
+                <img class="check" src="/Logo/Logos noir/case-cochee-animee.webp" alt="Case cochée" />
+                <p class="text">12 ans d’expérience dans la musculation</p>
+                <div class="icons">
+                    <img class="icon" src="/Logo/Logos noir/haltere.png" alt="Haltère" />
+                </div>
+            </div>
+
+            <div class="row">
+                <img class="check" src="/Logo/Logos noir/case-cochee-animee.webp" alt="Case cochée" />
+                <p class="text">Un programme de suivi adapté à tous</p>
+                <div class="icons pair">
+                    <img class="icon" src="/Logo/Logos noir/gars-maigre.png" alt="Gars maigre" />
+                    <img class="icon" src="/Logo/Logos noir/gars-gros.png" alt="Gars gros" />
+                </div>
+            </div>
+
+            <div class="row">
+                <img class="check" src="/Logo/Logos noir/case-cochee-animee.webp" alt="Case cochée" />
+                <p class="text">Une méthode approuvée par plusieurs clients</p>
+                <div class="icons">
+                    <img class="icon" src="/Logo/Logos noir/petite-foule.png" alt="Petite foule" />
+                </div>
+            </div>
+
+            <div class="row">
+                <img class="check" src="/Logo/Logos noir/case-cochee-animee.webp" alt="Case cochée" />
+                <p class="text">Je sais cuisiner :D</p>
+                <div class="icons">
+                    <img class="icon" src="/Logo/Logos noir/toque-cuisinier.png" alt="Toque de cuisinier" />
+                </div>
+            </div>
+        </div>
+
+        <picture>
+            <source media="(max-width: 768px)" srcset="/Mobile%20Background.jpg" />
+            <img src="/Background.png" alt="Portfolio de Sam Mathys" />
+        </picture>
+
+        <script>
+            const dumbbell = document.querySelector('.dumbbell');
+            dumbbell.src = dumbbell.src + '?' + Date.now();
+        </script>
+    </body>
 </html>
 
 <style>
-	body {
-		margin: 0;
-	}
+    body {
+        margin: 0;
+        overflow-x: hidden;
+    }
 
-	img {
-		display: block;
-		width: 100%;
-	}
+    img {
+        display: block;
+        width: 100%;
+    }
+
+    .intro {
+        position: absolute;
+        top: 200px;
+        left: 10%;
+        font-family: 'Antonio', sans-serif;
+        font-size: 48px;
+        color: white;
+    }
+
+    .dumbbell {
+        position: absolute;
+        top: -100px;
+        right: -29%;
+        width: 100%;
+    }
+
+    .todo {
+        position: absolute;
+        top: 73vw;
+        left: 11%;
+        width: 77%;
+    }
+
+    h2 {
+        margin: 0;
+        font-family: 'Antonio', sans-serif;
+        font-size: 48px;
+        text-decoration: underline;
+        color: black;
+    }
+
+    .row {
+        display: flex;
+        align-items: center;
+        margin-bottom: -8vw;
+    }
+
+    .check {
+        width: 12.3vw;
+    }
+
+    .text {
+        flex: 1;
+        margin: 0;
+        font-family: 'Antonio', sans-serif;
+        font-size: 48px;
+        color: black;
+    }
+
+    .icons {
+        display: flex;
+        justify-content: center;
+        width: 20vw;
+    }
+
+    .icon {
+        width: 17vw;
+    }
+
+    .pair .icon {
+        margin: 0 -5vw;
+    }
+
+    .green {
+        color: #2ecc71;
+    }
 </style>
