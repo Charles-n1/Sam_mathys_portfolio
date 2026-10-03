@@ -309,6 +309,35 @@ import Header from '../components/Header.astro';
         color: #e5322d;
     }
 
+    p,
+    h2 {
+        animation: sway 3s ease-in-out infinite alternate;
+    }
+
+    .check,
+    .icon,
+    .about-icon {
+        animation: sway-icon 2.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes sway {
+        from {
+            transform: rotate(-1deg);
+        }
+        to {
+            transform: rotate(1deg);
+        }
+    }
+
+    @keyframes sway-icon {
+        from {
+            transform: rotate(-4deg);
+        }
+        to {
+            transform: rotate(4deg);
+        }
+    }
+
     .green {
         color: #2ecc71;
     }
