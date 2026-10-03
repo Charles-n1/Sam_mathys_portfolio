@@ -20,7 +20,29 @@
 <script>
 	const logo = document.querySelector('.logo');
 
-	logo.addEventListener('click', () => {
+	function climbToTop() {
+		const start = window.scrollY;
+		const startTime = performance.now();
+
+		function step(now) {
+			const time = Math.min((now - startTime) / 1500, 1);
+			const progress = time + 0.15 * Math.sin(2 * Math.PI * time);
+			const shake = (Math.random() - 0.5) * 16 * (1 - time);
+
+			window.scrollTo({ top: start * (1 - progress) + shake, behavior: 'instant' });
+
+			if (time < 1) {
+				requestAnimationFrame(step);
+			}
+		}
+
+		requestAnimationFrame(step);
+	}
+
+	logo.addEventListener('click', (event) => {
+		event.preventDefault();
+		climbToTop();
+
 		logo.src = '/Logo/Logos blanc/logo-developpe-couche.webp?' + Date.now();
 
 		setTimeout(() => {
